@@ -1,3 +1,4 @@
+import { DEFAULT_CITY, DEFAULT_LANGUAGE } from '../constants/index';
 import fetch from 'node-fetch';
 
 import { API_KEY, ERROR_MESSAGE } from '../constants';
@@ -27,13 +28,13 @@ type GetCoords = Promise<{
     place?: string;
 }>;
 
-export const getCoordinates = async (city = 'Moscow'): GetCoords  => {
+export const getCoordinates = async (city = DEFAULT_CITY, language = DEFAULT_LANGUAGE): GetCoords  => {
   const BASE_URL = new URL('https://nominatim.openstreetmap.org/search.php');
   BASE_URL.searchParams.append('q', city);
   BASE_URL.searchParams.append('format', 'json');
   BASE_URL.searchParams.append('addressdetails', '1');
   BASE_URL.searchParams.append('limit', '1');
-  BASE_URL.searchParams.append('accept-language', 'ru');
+  BASE_URL.searchParams.append('accept-language', language);
   const response = await fetch(BASE_URL);
   if (!response.ok) throw Error(response.status.toString());
   const data = await response.json();

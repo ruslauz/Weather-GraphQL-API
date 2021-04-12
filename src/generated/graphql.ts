@@ -43,9 +43,7 @@ export type Current = {
   visibility?: Maybe<Scalars['Int']>;
   wind_speed?: Maybe<Scalars['Float']>;
   wind_deg?: Maybe<Scalars['Int']>;
-  wind_gust?: Maybe<Scalars['Int']>;
-  rain?: Maybe<Scalars['Int']>;
-  snow?: Maybe<Scalars['Int']>;
+  wind_gust?: Maybe<Scalars['Float']>;
   weather?: Maybe<Array<Maybe<Weather>>>;
 };
 
@@ -61,9 +59,7 @@ export type Daily = {
   dew_point?: Maybe<Scalars['Float']>;
   wind_speed?: Maybe<Scalars['Float']>;
   wind_deg?: Maybe<Scalars['Int']>;
-  wind_gust?: Maybe<Scalars['Int']>;
-  rain?: Maybe<Scalars['Int']>;
-  snow?: Maybe<Scalars['Int']>;
+  wind_gust?: Maybe<Scalars['Float']>;
   weather?: Maybe<Array<Maybe<Weather>>>;
   clouds?: Maybe<Scalars['Int']>;
   pop?: Maybe<Scalars['Float']>;
@@ -107,9 +103,7 @@ export type Hourly = {
   visibility?: Maybe<Scalars['Int']>;
   wind_speed?: Maybe<Scalars['Float']>;
   wind_deg?: Maybe<Scalars['Int']>;
-  wind_gust?: Maybe<Scalars['Int']>;
-  rain?: Maybe<Scalars['Int']>;
-  snow?: Maybe<Scalars['Int']>;
+  wind_gust?: Maybe<Scalars['Float']>;
   weather?: Maybe<Array<Maybe<Weather>>>;
   pop?: Maybe<Scalars['Float']>;
 };
@@ -149,11 +143,11 @@ export type Weather = {
 
 export type WeatherResponse = {
   __typename?: 'WeatherResponse';
-  location?: Maybe<Location>;
   lat?: Maybe<Scalars['Float']>;
   lon?: Maybe<Scalars['Float']>;
   timezone?: Maybe<Scalars['String']>;
   timezone_offset?: Maybe<Scalars['Int']>;
+  location?: Maybe<Location>;
   current?: Maybe<Current>;
   minutely?: Maybe<Array<Maybe<Minutely>>>;
   hourly?: Maybe<Array<Maybe<Hourly>>>;

@@ -1,12 +1,14 @@
 import { gql } from 'apollo-server';
 
+const qwe = '1h'
+
 export const typeDefs = gql`
   type WeatherResponse {
-    location: Location
     lat: Float
     lon: Float
     timezone: String
     timezone_offset: Int
+    location: Location
     current: Current
     minutely: [Minutely]
     hourly: [Hourly]
@@ -48,9 +50,9 @@ export const typeDefs = gql`
     visibility: Int
     wind_speed: Float
     wind_deg: Int
-    wind_gust: Int
-    rain: Int
-    snow: Int
+    wind_gust: Float
+    # rain: Int
+    # snow: Int
     weather: [Weather]
   }
 
@@ -66,9 +68,9 @@ export const typeDefs = gql`
     visibility: Int
     wind_speed: Float
     wind_deg: Int
-    wind_gust: Int
-    rain: Int
-    snow: Int
+    wind_gust: Float
+    # rain: Int
+    # snow: Int
     weather: [Weather]
     pop: Float
   }
@@ -84,9 +86,9 @@ export const typeDefs = gql`
     dew_point: Float
     wind_speed: Float
     wind_deg: Int
-    wind_gust: Int
-    rain: Int
-    snow: Int
+    wind_gust: Float
+    # rain: Int
+    # snow: Int
     weather: [Weather]
     clouds: Int
     pop: Float
