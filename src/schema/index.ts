@@ -1,7 +1,5 @@
 import { gql } from 'apollo-server';
 
-const qwe = '1h'
-
 export const typeDefs = gql`
   type WeatherResponse {
     lat: Float
